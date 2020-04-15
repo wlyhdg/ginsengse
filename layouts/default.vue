@@ -26,7 +26,7 @@ html {
   width: 100%;
   height: 100%;
   position: absolute;
-  transform: scale(2) translateY(20%) rotate(30deg);
+  transform: scale(1) translateY(20%) rotate(30deg);
   bottom: 0;
   left: 0;
   z-index: -1;
