@@ -42,9 +42,12 @@ nav {
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  font-size: 8px;
+  font-size: 24px;
   text-transform: uppercase;
   color: #ffeca7;
-  line-height: 3.5rem;
+}
+
+.earth-nav__linkwrap > * {
+  margin: 2.5rem auto;
 }
 </style>
