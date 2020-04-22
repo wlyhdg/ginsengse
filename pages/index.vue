@@ -20,4 +20,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+body {
+  font-size: 8px;
+}
+</style>

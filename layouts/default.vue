@@ -1,7 +1,7 @@
 <template>
   <div class="earth">
     <div class="earth__inner">
-      <div class="earth__inner-nav"></div>
+      <earth-nav />
       <div class="earth__inner-nuxt">
         <nuxt />
       </div>
@@ -9,6 +9,12 @@
   </div>
 </template>
 
+<script>
+import EarthNav from '../components/EarthNav.vue'
+export default {
+  components: { EarthNav }
+}
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Gruppo&display=swap');
 
@@ -55,10 +61,12 @@ html {
   border: 9px solid #83744e;
 }
 
-.earth__inner-nav {
+aside.earth-nav {
   position: absolute;
-  width: 30%;
+  width: 25%;
+  max-width: 300px;
   right: 0;
+  height: 100%;
 }
 
 .earth__inner-nuxt {
