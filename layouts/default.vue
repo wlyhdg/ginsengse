@@ -58,7 +58,7 @@ html {
   width: 80%;
   height: 75vh;
   background: #b9a978;
-  border: 9px solid #83744e;
+  border: 8px solid #83744e;
 }
 
 aside.earth-nav {
@@ -71,7 +71,7 @@ aside.earth-nav {
 
 .earth__inner-nuxt {
   position: absolute;
-  width: 70%;
+  width: 75%;
 }
 
 .button {

@@ -34,6 +34,8 @@ nav {
   width: 70%;
   margin: auto;
   margin-top: -44px;
+  box-shadow: 1px 1px 10px 1px rgba(3, 3, 3, 0.4),
+    inset 0px 0px 25px 0.5px rgba(90, 55, 3, 0.1);
 }
 
 .earth-nav__linkwrap {
@@ -42,7 +44,7 @@ nav {
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  font-size: 24px;
+  font-size: 16px;
   text-transform: uppercase;
   color: #ffeca7;
 }
