@@ -2,10 +2,10 @@
   <aside class="earth-nav">
     <nav>
       <div class="earth-nav__linkwrap">
-        <a>Home</a>
-        <a>Zen of Iroh</a>
-        <a>Toff's Tea Temple</a>
-        <a>Herbs of Kyoshi </a>
+        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/iroh">Zen of Iroh</nuxt-link>
+        <nuxt-link to="/toff">Toff's Tea Temple</nuxt-link>
+        <nuxt-link to="/kyoshi">Herbs of Kyoshi </nuxt-link>
       </div>
     </nav>
   </aside>
@@ -47,6 +47,11 @@ nav {
   font-size: 16px;
   text-transform: uppercase;
   color: #ffeca7;
+}
+
+a {
+  color: #ffeca7;
+  text-decoration: none;
 }
 
 .earth-nav__linkwrap > * {
