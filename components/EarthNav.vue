@@ -3,9 +3,9 @@
     <nav>
       <div class="earth-nav__linkwrap">
         <a>Home</a>
-        <a>Tour</a>
-        <a>Notable Figures</a>
-        <a>Call</a>
+        <a>Zen of Iroh</a>
+        <a>Toff's Tea Temple</a>
+        <a>Herbs of Kyoshi </a>
       </div>
     </nav>
   </aside>
@@ -50,6 +50,7 @@ nav {
 }
 
 .earth-nav__linkwrap > * {
-  margin: 2.5rem auto;
+  margin: 2.5rem 10px;
+  /* word-wrap: break-word; */
 }
 </style>

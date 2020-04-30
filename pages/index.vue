@@ -8,14 +8,14 @@
     </h1>
     <div class="tea">
       <p class="tea__name">Jasmine Tea</p>
-      <p>&nbsp; | 745.65¥</p>
+      <p>¥745.65</p>
       <button-base class="tea__add-btn" scaling="0.32">
         <icon-plus />
       </button-base>
     </div>
     <div class="tea">
       <p class="tea__name">Oolong Tea</p>
-      <p>&nbsp; | 745.65¥</p>
+      <p>¥745.65</p>
       <button-base class="tea__add-btn" scaling="0.32">
         <icon-plus />
       </button-base>
@@ -41,15 +41,11 @@ export default {
 .tea {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: -65px;
 }
 
 .tea__name {
   margin-left: 30px;
-}
-
-.tea__add-btn {
-  margin-left: auto;
 }
 </style>
