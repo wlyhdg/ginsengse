@@ -1,11 +1,6 @@
 <template>
   <div class="container">
     <div class="banner"></div>
-    <h1>
-      The ancient city of Ba Sing Se is known for its inpenetrable wall. But
-      where its true hidden beauty lies is in its foliage of tea & herb
-      selections!
-    </h1>
     <div class="tea">
       <p class="tea__name">Jasmine Tea</p>
       <p>¥745.65</p>

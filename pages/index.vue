@@ -1,51 +1,61 @@
 <template>
-  <div class="container">
-    <div class="banner"></div>
-    <h1>
-      The ancient city of Ba Sing Se is known for its inpenetrable wall. But
-      where its true hidden beauty lies is in its foliage of tea & herb
-      selections!
-    </h1>
-    <div class="tea">
-      <p class="tea__name">Jasmine Tea</p>
-      <p>¥745.65</p>
-      <button-base class="tea__add-btn" scaling="0.32">
-        <icon-plus />
-      </button-base>
-    </div>
-    <div class="tea">
-      <p class="tea__name">Oolong Tea</p>
-      <p>¥745.65</p>
-      <button-base class="tea__add-btn" scaling="0.32">
-        <icon-plus />
-      </button-base>
+  <div class="home">
+    <h1 class="home__title">GinSingSe</h1>
+    <div class="home__desc">
+      <h3>
+        The ancient city of Ba Sing Se is known for its inpenetrable wall. But
+        where its true hidden beauty lies is in its foliage of tea & herb
+        selections!
+      </h3>
     </div>
   </div>
 </template>
 
 <script>
-import ButtonBase from '../components/ButtonBase.vue'
-import IconPlus from '../components/IconPlus.vue'
-
 export default {
-  components: { ButtonBase, IconPlus }
+  components: {}
 }
 </script>
 
 <style>
-.banner {
-  height: 200px;
-  background: url('/iroh_dbgfmmu-pre.jpg') center/cover no-repeat;
+.home {
+  text-align: center;
 }
 
-.tea {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: -65px;
+.earth__inner-nuxt::before {
+  position: absolute;
+  content: '';
+  background: url('/bamboo.png') center/contain no-repeat;
+  transform: translateX(-35%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
-.tea__name {
-  margin-left: 30px;
+.earth__inner-nuxt::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  background: url('/bamboo.png') center/contain no-repeat;
+  transform: translateX(35%) rotateY(180deg);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.home__title {
+  font-size: 87px;
+  text-transform: uppercase;
+}
+
+.home__desc {
+  font-size: 40px;
+}
+
+.home__desc > h3 {
+  text-align: right;
+  width: 80%;
+  margin: 0 auto;
 }
 </style>

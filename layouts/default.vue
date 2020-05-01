@@ -27,7 +27,7 @@ html {
   overflow: hidden;
 }
 
-.earth::before {
+/* .earth::before {
   content: url('/bamboo.png');
   width: 100%;
   height: 100%;
@@ -37,7 +37,7 @@ html {
   left: 0;
   z-index: -1;
   opacity: 0.5;
-}
+} */
 
 *,
 *:before,
@@ -58,7 +58,7 @@ html {
   width: 80%;
   height: 75vh;
   background: #b9a978;
-  border: 8px solid #83744e;
+  border: 5px solid #83744e;
 }
 
 aside.earth-nav {
@@ -72,6 +72,7 @@ aside.earth-nav {
 .earth__inner-nuxt {
   position: absolute;
   width: 75%;
+  height: 100%;
 }
 
 .button {
