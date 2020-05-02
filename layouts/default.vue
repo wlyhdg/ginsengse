@@ -27,18 +27,6 @@ html {
   overflow: hidden;
 }
 
-/* .earth::before {
-  content: url('/bamboo.png');
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform: scale(1) translateY(20%) rotate(30deg);
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  opacity: 0.5;
-} */
-
 *,
 *:before,
 *:after {
@@ -64,7 +52,6 @@ html {
 aside.earth-nav {
   position: absolute;
   width: 25%;
-  max-width: 300px;
   right: 0;
   height: 100%;
 }
@@ -80,5 +67,18 @@ aside.earth-nav {
   border-radius: 4px;
   text-decoration: none;
   padding: 10px 30px;
+}
+
+.page-enter-active {
+  transition: opacity 0.25s ease-out;
+}
+
+.page-leave-active {
+  transition: opacity 0.25s ease-in;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
 }
 </style>

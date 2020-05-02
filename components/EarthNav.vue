@@ -5,17 +5,28 @@
         <nuxt-link to="/"
           ><div :class="{ active: page == 'index' }">Home</div></nuxt-link
         >
-        <nuxt-link to="/iroh"
-          ><div :class="{ active: page == 'iroh' }">Zen of Iroh</div></nuxt-link
-        >
-        <nuxt-link to="/toff"
-          ><div :class="{ active: page == 'toff' }">
-            Toff's Tea Temple
-          </div></nuxt-link
-        >
-        <nuxt-link to="/kyoshi"
-          ><div :class="{ active: page == 'kyoshi' }">Herbs of Kyoshi</div>
-        </nuxt-link>
+        <div v-for="(shop, idx) in shops" :key="idx">
+          <nuxt-link :to="shop.tag">
+            <div :class="{ active: page == shop.tag }">
+              {{ shop.name }}
+            </div></nuxt-link
+          >
+        </div>
+        <!-- <div class="earth-nav__shops">
+          <nuxt-link to="/iroh"
+            ><div :class="{ active: page == 'iroh' }">
+              Zen of Iroh
+            </div></nuxt-link
+          >
+          <nuxt-link to="/toff"
+            ><div :class="{ active: page == 'toff' }">
+              Toff's Tea Temple
+            </div></nuxt-link
+          >
+          <nuxt-link to="/kyoshi"
+            ><div :class="{ active: page == 'kyoshi' }">Herbs of Kyoshi</div>
+          </nuxt-link>
+        </div> -->
       </div>
     </nav>
   </aside>
@@ -25,7 +36,7 @@
 import { mapState } from 'vuex'
 export default {
   computed: {
-    ...mapState(['page'])
+    ...mapState(['page', 'shops'])
   }
 }
 </script>
@@ -48,6 +59,8 @@ nav {
   background: #646424;
   height: calc(100% + 88px);
   width: 70%;
+  min-width: 80px;
+  max-width: 172px;
   margin: auto;
   margin-top: -44px;
   box-shadow: 1px 1px 10px 1px rgba(3, 3, 3, 0.4),
@@ -79,5 +92,9 @@ a {
 .earth-nav__linkwrap > * {
   margin: 2.5rem auto;
   /* word-wrap: break-word; */
+}
+
+.earth-nav__shops div {
+  /* margin: 4rem auto; */
 }
 </style>
