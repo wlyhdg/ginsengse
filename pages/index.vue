@@ -87,7 +87,9 @@ export default {
 .home__title {
   font-size: 87px;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 0px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .home__desc {

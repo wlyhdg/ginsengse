@@ -2,17 +2,32 @@
   <aside class="earth-nav">
     <nav>
       <div class="earth-nav__linkwrap">
-        <nuxt-link to="/">Home</nuxt-link>
-        <nuxt-link to="/iroh">Zen of Iroh</nuxt-link>
-        <nuxt-link to="/toff">Toff's Tea Temple</nuxt-link>
-        <nuxt-link to="/kyoshi">Herbs of Kyoshi </nuxt-link>
+        <nuxt-link to="/"
+          ><div :class="{ active: page == 'index' }">Home</div></nuxt-link
+        >
+        <nuxt-link to="/iroh"
+          ><div :class="{ active: page == 'iroh' }">Zen of Iroh</div></nuxt-link
+        >
+        <nuxt-link to="/toff"
+          ><div :class="{ active: page == 'toff' }">
+            Toff's Tea Temple
+          </div></nuxt-link
+        >
+        <nuxt-link to="/kyoshi"
+          ><div :class="{ active: page == 'kyoshi' }">Herbs of Kyoshi</div>
+        </nuxt-link>
       </div>
     </nav>
   </aside>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState(['page'])
+  }
+}
 </script>
 
 <style>
@@ -41,6 +56,8 @@ nav {
 
 .earth-nav__linkwrap {
   height: 100%;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -50,13 +67,17 @@ nav {
   color: #ffeca7;
 }
 
+.earth-nav__linkwrap .active {
+  border-bottom: 1px solid #f0d77c;
+}
+
 a {
   color: #ffeca7;
   text-decoration: none;
 }
 
 .earth-nav__linkwrap > * {
-  margin: 2.5rem 10px;
+  margin: 2.5rem auto;
   /* word-wrap: break-word; */
 }
 </style>
