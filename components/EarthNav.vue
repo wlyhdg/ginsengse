@@ -29,13 +29,14 @@ aside::before {
 
 nav {
   position: relative;
-  background: #607056;
+  z-index: 100;
+  background: #646424;
   height: calc(100% + 88px);
   width: 70%;
   margin: auto;
   margin-top: -44px;
   box-shadow: 1px 1px 10px 1px rgba(3, 3, 3, 0.4),
-    inset 0px 0px 25px 0.5px rgba(90, 55, 3, 0.1);
+    inset 0px 0px 35px 1px rgba(3, 59, 17, 0.2);
 }
 
 .earth-nav__linkwrap {
