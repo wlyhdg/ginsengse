@@ -77,6 +77,7 @@ nav {
   flex-direction: column;
   font-size: 16px;
   text-transform: uppercase;
+  letter-spacing: 0.23em;
   color: #ffeca7;
 }
 
