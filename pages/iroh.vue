@@ -2,6 +2,35 @@
   <div class="container">
     <div class="banner"></div>
 
+    <svg
+      width="238"
+      height="175"
+      viewBox="0 0 238 175"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <path
+        d="M1.29834 174.25L119 0.890134L236.702 174.25H1.29834Z"
+        fill="url(#pattern0)"
+        stroke="black"
+      />
+      <defs>
+        <pattern
+          id="pattern0"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use
+            xlink:href="#image0"
+            transform="translate(-0.31635) scale(0.00170073 0.002)"
+          />
+        </pattern>
+        <image id="image0" width="960" height="500" xlink:href="/iroh.jpg" />
+      </defs>
+    </svg>
+
     <h1>{{ shops[0].owner }} | Owner</h1>
 
     <div
