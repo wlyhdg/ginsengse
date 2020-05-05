@@ -6,7 +6,7 @@
           v-if="page == 'iroh'"
           key="one"
           class="pf"
-          img-link="/iroh.jpg"
+          img-link="/iroh_by_damionmauville_dbh31n5-pre.jpg"
         />
         <photo-frame
           v-if="page == 'toff'"

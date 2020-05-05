@@ -4,7 +4,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       page: 'index',
-      user: 0,
+      userIndex: 0,
       shops: [
         {
           tag: 'iroh',
@@ -102,9 +102,15 @@ const createStore = () => {
     mutations: {
       updatePage(state, pageName) {
         state.page = pageName
-      },
-      selectUser(state, i) {
-        state.user = i
+      }
+    },
+    getters: {
+      selectIndex: (state) => {
+        for (let i = 0; i < state.shops.length; i++) {
+          if (state.shops[i].tag === state.page) {
+            return i
+          }
+        }
       }
     }
   })

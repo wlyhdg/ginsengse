@@ -64,13 +64,6 @@ aside.earth-nav {
   height: 100%;
 }
 
-.button {
-  display: inline-block;
-  border-radius: 4px;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
 .page-enter-active {
   transition: opacity 0.25s ease-out;
 }
