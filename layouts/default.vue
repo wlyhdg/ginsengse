@@ -3,7 +3,8 @@
     <div class="earth__inner">
       <earth-nav />
       <div class="earth__inner-nuxt">
-        <nuxt />
+        <!-- <nuxt /> -->
+        <test />
       </div>
     </div>
   </div>
@@ -11,8 +12,9 @@
 
 <script>
 import EarthNav from '../components/EarthNav.vue'
+import Test from '../components/Test.vue'
 export default {
-  components: { EarthNav }
+  components: { EarthNav, Test }
 }
 </script>
 <style>

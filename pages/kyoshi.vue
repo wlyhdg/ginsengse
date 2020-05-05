@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="banner"></div>
+    <!-- <div class="banner"></div> -->
     <div class="tea">
       <p class="tea__name">Jasmine Tea</p>
       <p>¥745.65</p>
