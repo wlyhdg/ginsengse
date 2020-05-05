@@ -28,39 +28,26 @@
       </div>
     </div>
 
-    <div>
+    <shop-menu />
+
+    <!-- <div>
       <ul>
         <li v-for="({ item, price }, index) in shops[0].menu" :key="index">
           <span>{{ item }}</span>
-          <span>{{ price }}</span>
-          <button>+</button>
+          <span>¥{{ price }}</span>
+          <button-base />
         </li>
       </ul>
-    </div>
-
-    <!-- <div class="tea">
-      <p class="tea__name">Jasmine Tea</p>
-      <p>¥745.65</p>
-      <button-base class="tea__add-btn" scaling="0.32">
-        <icon-plus />
-      </button-base>
-    </div>
-    <div class="tea">
-      <p class="tea__name">Oolong Tea</p>
-      <p>¥745.65</p>
-      <button-base class="tea__add-btn" scaling="0.32">
-        <icon-plus />
-      </button-base>
     </div> -->
   </div>
 </template>
 
 <script>
-// import ButtonBase from '../components/ButtonBase.vue'
-// import IconPlus from '../components/IconPlus.vue'
 import { mapState } from 'vuex'
+import ShopMenu from '../components/ShopMenu.vue'
+// import IconPlus from '../components/IconPlus.vue'
 export default {
-  components: {},
+  components: { ShopMenu },
   computed: {
     ...mapState(['shops', 'page'])
   }
@@ -70,6 +57,5 @@ export default {
 <style>
 .banner {
   height: 200px;
-  background: url('/iroh_dbgfmmu-pre.jpg') center/cover no-repeat;
 }
 </style>

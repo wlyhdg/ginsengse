@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div key="test" class="banner">
+    <div key="banner" :class="'banner banner-' + page">
       <transition-group name="test" tag="div">
         <photo-frame
           v-if="page == 'iroh'"
@@ -40,9 +40,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .banner {
+  background: center/cover no-repeat;
   position: relative;
+  &.banner-iroh {
+    background-image: url('/iroh_dbgfmmu-pre.jpg');
+  }
+  &.banner-toff {
+    background-image: url('/toph_beifong_wallpaper_by_damionmauville_dbh63rc-pre.jpg');
+  }
+  &.banner-kyoshi {
+    background-image: url('/kyoshi_wallpaper_by_damionmauville_dbg6u69-pre.jpg');
+  }
 }
 
 .pf {
@@ -52,7 +62,7 @@ export default {
 
 .test-enter-active,
 .test-leave-active {
-  transition: all 1s ease;
+  transition: all 0.4s ease;
 }
 
 .test-enter,

@@ -10,37 +10,27 @@
       <rect
         id="btnbkgnd"
         y="1"
-        :width="width - 1"
+        :width="width"
         :height="height"
         fill="#49412B"
       />
       <path
         id="btngrass"
-        d="M21.01 16.8103L8.60652 33.8793L4.55639 26.8966L0 33.8793V0H101V24.0517L96.9499 16.8103L87.3308 40.0862L78.7243 16.8103L73.6617 26.8966L67.5865 16.8103L55.9424 45L43.2857 16.8103L31.6416 33.8793L21.01 16.8103Z"
+        d="M6.65664 5.22989L2.72682 10.5402L1.44361 8.36782L0 10.5402V0H32V7.48276L30.7168 5.22989L27.6692 12.4713L24.9424 5.22989L23.3383 8.36782L21.4135 5.22989L17.7243 14L13.7143 5.22989L10.0251 10.5402L6.65664 5.22989Z"
         fill="url(#paint0_linear)"
       />
       <g id="plusicon">
-        <path
-          id="Vector 2"
-          d="M28.9403 60.1343L71.0597 60.1343"
-          stroke="#83744E"
-          stroke-width="7"
-        />
-        <path
-          id="Vector 3"
-          d="M50 39.0746V81.194"
-          stroke="#83744E"
-          stroke-width="7"
-        />
+        <path id="Vector 2" d="M8 16L24 16.0001" stroke="#83744E" />
+        <path id="Vector 3" d="M16 8V24" stroke="#83744E" />
       </g>
     </g>
     <defs>
       <linearGradient
         id="paint0_linear"
-        x1="50.5"
+        x1="16"
         y1="0"
-        x2="50.5"
-        y2="45"
+        x2="16"
+        y2="14"
         gradientUnits="userSpaceOnUse"
       >
         <stop stop-color="#223F25" />
@@ -66,11 +56,11 @@ export default {
     },
     height: {
       type: Number,
-      default: 102
+      default: 32
     },
     width: {
       type: Number,
-      default: 102
+      default: 32
     },
     bgColor: {
       type: String,
@@ -78,7 +68,7 @@ export default {
     },
     scaling: {
       type: [Number, String],
-      default: 0.5
+      default: 1
     }
   },
   computed: {
@@ -89,8 +79,4 @@ export default {
 }
 </script>
 
-<style>
-.banana {
-  transform: scale(0.5);
-}
-</style>
+<style></style>
