@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="menu">
     <ul>
       <li
-        v-for="({ item, price }, index) in shops[currentIndex].menu"
+        v-for="({ item, price }, index) in shops[selectIndex].menu"
         :key="index"
       >
         <span>{{ item }}</span>
@@ -14,24 +14,24 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import ButtonBase from './ButtonBase.vue'
 export default {
   components: { ButtonBase },
   computed: {
     ...mapState(['shops', 'page']),
-    currentIndex() {
-      let resultingIndex = 0
-      for (let i = 0; i < this.shops.length; i++) {
-        if (this.shops[i].tag === this.page) {
-          resultingIndex = i
-          break
-        }
-      }
-      return resultingIndex
-    }
+    ...mapGetters(['selectIndex'])
   }
 }
 </script>
 
-<style></style>
+<style>
+.menu {
+  display: grid;
+  place-items: center;
+}
+
+li {
+  list-style-type: none;
+}
+</style>

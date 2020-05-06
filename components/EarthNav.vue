@@ -6,7 +6,7 @@
           ><div :class="{ active: page == 'index' }">Home</div></nuxt-link
         >
         <div v-for="(shop, idx) in shops" :key="idx">
-          <nuxt-link :to="shop.tag">
+          <nuxt-link :to="'/' + shop.tag">
             <div :class="{ active: page == shop.tag }">
               {{ shop.name }}
             </div></nuxt-link

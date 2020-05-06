@@ -14,8 +14,4 @@ export default {
 }
 </script>
 
-<style>
-.banner {
-  height: 200px;
-}
-</style>
+<style></style>

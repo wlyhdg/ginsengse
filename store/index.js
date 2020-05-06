@@ -9,7 +9,7 @@ const createStore = () => {
         {
           tag: 'iroh',
           name: 'Zen of Iroh',
-          owner: 'Uncle Iroh',
+          owner: 'Iroh',
           likes: 7034,
           dislikes: 47,
           menu: [
@@ -111,6 +111,7 @@ const createStore = () => {
             return i
           }
         }
+        return 0
       }
     }
   })
