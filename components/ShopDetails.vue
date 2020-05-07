@@ -22,17 +22,8 @@
         <div class="center">
           <h4>{{ name }}</h4>
           <p>{{ duration[0] | firstTime }} - {{ duration[1] | secondTime }}</p>
+          <simple-calendar class="sc" :days="days" />
         </div>
-      </div>
-
-      <div class="center">
-        <span>SU</span>
-        <span>M</span>
-        <span>T</span>
-        <span>W</span>
-        <span>TR</span>
-        <span>F</span>
-        <span>S</span>
       </div>
     </div>
   </div>
@@ -40,7 +31,9 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
+import SimpleCalendar from './SimpleCalendar.vue'
 export default {
+  components: { SimpleCalendar },
   filters: {
     firstTime(time) {
       let [hour, minutes] = String(time).split('.')
@@ -102,6 +95,10 @@ export default {
 
 .owner__space-first {
   justify-self: right;
+}
+
+.sc {
+  padding: 10px;
 }
 
 .owner__space::before {

@@ -39,6 +39,7 @@ li {
   justify-content: space-between;
   align-items: center;
   margin: 5px 0;
+  line-height: 0.7em;
 }
 
 ul {
