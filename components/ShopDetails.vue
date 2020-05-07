@@ -9,17 +9,23 @@
     <div
       v-for="({ focus, special }, index) in shops[selectIndex].description"
       :key="index"
+      :class="'details__descr-' + index"
     >
-      <p>Specialties:</p>
-      <ul>
-        <li v-for="(f, index2) in focus" :key="index2">{{ f }}</li>
-      </ul>
-
-      <h3 v-for="({ name, duration, days }, index3) in special" :key="index3">
-        {{ name }} | {{ duration[0] }} - {{ duration[1] }}
-      </h3>
-
       <div>
+        <h2>Focus</h2>
+        <ul>
+          <li v-for="(f, index2) in focus" :key="index2">{{ f }}</li>
+        </ul>
+      </div>
+      <div v-for="({ name, duration, days }, index3) in special" :key="index3">
+        <h2>Specialty</h2>
+        <div class="center">
+          <h4>{{ name }}</h4>
+          <p>{{ duration[0] }} - {{ duration[1] }}</p>
+        </div>
+      </div>
+
+      <div class="center">
         <span>SU</span>
         <span>M</span>
         <span>T</span>

@@ -74,6 +74,10 @@ aside.earth-nav {
   grid-template-columns: 6fr 7fr;
 }
 
+.center {
+  text-align: center;
+}
+
 .page-enter-active {
   transition: opacity 0.25s ease-out;
 }

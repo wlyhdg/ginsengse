@@ -77,6 +77,10 @@ export default {
   opacity: 0;
 }
 
+.details__descr-0 {
+  margin: 20px;
+}
+
 @media screen and (max-width: 658px) {
   .pf {
     transform: scale(0.5);
