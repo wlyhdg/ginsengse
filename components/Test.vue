@@ -57,7 +57,7 @@ export default {
 
 .pf {
   position: absolute;
-  bottom: -100px;
+  bottom: -90px;
   left: calc(46.15% - 300px);
   z-index: 1;
 }

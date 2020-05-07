@@ -5,8 +5,10 @@
         v-for="({ item, price }, index) in shops[selectIndex].menu"
         :key="index"
       >
-        <span>{{ item }}</span>
-        <span>¥{{ price }}</span>
+        <div class="menu__text">
+          <span>{{ item }}</span>
+          <span>¥{{ price }}</span>
+        </div>
         <button-base />
       </li>
     </ul>
@@ -33,5 +35,23 @@ export default {
 
 li {
   list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+ul {
+  width: 80%;
+}
+.menu__text {
+  display: flex;
+  width: 80%;
+  /* margin-right: 8px; */
+  justify-content: space-between;
+}
+
+.menu__text > * {
+  margin: auto 5px;
 }
 </style>
