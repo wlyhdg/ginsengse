@@ -21,7 +21,7 @@
         <h2>Specialty</h2>
         <div class="center">
           <h4>{{ name }}</h4>
-          <p>{{ duration[0] }} - {{ duration[1] }}</p>
+          <p>{{ duration[0] | firstTime }} - {{ duration[1] | secondTime }}</p>
         </div>
       </div>
 
@@ -41,6 +41,30 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 export default {
+  filters: {
+    firstTime(time) {
+      let [hour, minutes] = String(time).split('.')
+      if (hour > 12) {
+        hour = hour - 12
+      }
+      if (minutes) {
+        minutes = Number(`0.${minutes}`) * minutes
+      }
+      return minutes ? hour + ':' + minutes : hour
+    },
+    secondTime(time) {
+      let period = 'AM'
+      let [hour, minutes] = String(time).split('.')
+      if (hour > 12) {
+        hour = hour - 12
+        period = 'PM'
+      }
+      if (minutes) {
+        minutes = Number(`0.${minutes}`) * 60
+      }
+      return minutes ? hour + ':' + minutes + period : hour + period
+    }
+  },
   computed: {
     ...mapState(['shops', 'page']),
     ...mapGetters(['selectIndex'])
