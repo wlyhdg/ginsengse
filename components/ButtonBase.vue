@@ -20,8 +20,8 @@
         fill="url(#paint0_linear)"
       />
       <g id="plusicon">
-        <path id="Vector 2" d="M8 16L24 16.0001" stroke="#83744E" />
-        <path id="Vector 3" d="M16 8V24" stroke="#83744E" />
+        <path id="vector2" d="M8 16L24 16.0001" stroke="#83744E" />
+        <path id="vector3" d="M16 8V24" stroke="#83744E" />
       </g>
     </g>
     <defs>

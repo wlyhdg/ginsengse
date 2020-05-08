@@ -9,7 +9,9 @@
           <span>{{ item }}</span>
           <span>¥{{ price }}</span>
         </div>
-        <button-base />
+        <div @click="toggleMenuItem(index)">
+          <button-base :class="'adder-' + index" />
+        </div>
       </li>
     </ul>
   </div>
@@ -17,12 +19,101 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
+import { TimelineMax, Expo } from 'gsap'
 import ButtonBase from './ButtonBase.vue'
 export default {
   components: { ButtonBase },
+  data() {
+    return {
+      menuItemAdded: []
+    }
+  },
   computed: {
     ...mapState(['shops', 'page']),
     ...mapGetters(['selectIndex'])
+  },
+  created() {
+    for (let i = 0; i < this.shops[this.selectIndex].menu.length; i++) {
+      this.menuItemAdded[i] = false
+    }
+  },
+  methods: {
+    toggleMenuItem(index) {
+      if (!this.menuItemAdded[index]) {
+        this.addTeaItem(index)
+      } else {
+        this.removeTeaItem(index)
+      }
+      this.menuItemAdded[index] = !this.menuItemAdded[index]
+    },
+    addTeaItem(index) {
+      const tl = new TimelineMax()
+      tl.to('.adder-' + index, 0.1, { x: '+=20', yoyo: true, repeat: 5 }, '<')
+      tl.to(
+        '.adder-' + index,
+        0.1,
+        { x: '-=20', yoyo: true, repeat: 5 },
+        '<0.1'
+      )
+      tl.to(
+        '.adder-' + index + ' #vector3',
+        1,
+        { opacity: 0, ease: Expo.easeInOut },
+        '<'
+      )
+      tl.to(
+        '.adder-' + index + ' #btngrass',
+        1,
+        { opacity: 0, ease: Expo.easeInOut },
+        '<'
+      )
+      tl.to(
+        '.adder-' + index + ' #btnbkgnd',
+        1,
+        { opacity: 0.8, fill: '#ad2e1b', ease: Expo.easeInOut },
+        '<'
+      )
+      tl.to(
+        '.adder-' + index + ' #vector2',
+        1,
+        { stroke: '#333', ease: Expo.easeInOut },
+        '<'
+      )
+    },
+    removeTeaItem(index) {
+      const tl = new TimelineMax()
+      tl.to('.adder-' + index, 0.1, { x: '-=20', yoyo: true, repeat: 5 }, '<')
+      tl.to(
+        '.adder-' + index,
+        0.1,
+        { x: '+=20', yoyo: true, repeat: 5 },
+        '<0.1'
+      )
+      tl.to(
+        '.adder-' + index + ' #vector3',
+        1,
+        { opacity: 1, ease: Expo.easeInOut },
+        '<'
+      )
+      tl.to(
+        '.adder-' + index + ' #btngrass',
+        1,
+        { opacity: 1, ease: Expo.easeInOut },
+        '<'
+      )
+      tl.to(
+        '.adder-' + index + ' #btnbkgnd',
+        1,
+        { opacity: 1, fill: '#49412B', ease: Expo.easeInOut },
+        '<'
+      )
+      tl.to(
+        '.adder-' + index + ' #vector2',
+        1,
+        { stroke: '#83744E', ease: Expo.easeInOut },
+        '<'
+      )
+    }
   }
 }
 </script>
@@ -54,5 +145,26 @@ ul {
 
 .menu__text > * {
   margin: auto 5px;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  12% {
+    transform: translateY(100px);
+  }
+  25% {
+    transform: translateY(-75px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  75% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 </style>
