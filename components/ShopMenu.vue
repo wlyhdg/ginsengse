@@ -29,7 +29,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['shops', 'page']),
+    ...mapState(['shops', 'page', 'cartQty']),
     ...mapGetters(['selectIndex'])
   },
   created() {
@@ -79,6 +79,7 @@ export default {
         { stroke: '#333', ease: Expo.easeInOut },
         '<'
       )
+      this.$store.commit('addToCart')
     },
     removeTeaItem(index) {
       const tl = new TimelineMax()
@@ -113,6 +114,7 @@ export default {
         { stroke: '#83744E', ease: Expo.easeInOut },
         '<'
       )
+      this.$store.commit('removeFromCart')
     }
   }
 }

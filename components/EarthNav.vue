@@ -1,5 +1,11 @@
 <template>
   <aside class="earth-nav">
+    <notification-pane
+      class="notif-pane"
+      bg-color="#243F27"
+      text-color="#E1BD3C"
+      :notification-count="cartQty"
+    />
     <nav>
       <div class="earth-nav__linkwrap">
         <nuxt-link to="/"
@@ -12,21 +18,6 @@
             </div></nuxt-link
           >
         </div>
-        <!-- <div class="earth-nav__shops">
-          <nuxt-link to="/iroh"
-            ><div :class="{ active: page == 'iroh' }">
-              Zen of Iroh
-            </div></nuxt-link
-          >
-          <nuxt-link to="/toff"
-            ><div :class="{ active: page == 'toff' }">
-              Toff's Tea Temple
-            </div></nuxt-link
-          >
-          <nuxt-link to="/kyoshi"
-            ><div :class="{ active: page == 'kyoshi' }">Herbs of Kyoshi</div>
-          </nuxt-link>
-        </div> -->
       </div>
     </nav>
   </aside>
@@ -34,9 +25,11 @@
 
 <script>
 import { mapState } from 'vuex'
+import NotificationPane from './NotificationPane.vue'
 export default {
+  components: { NotificationPane },
   computed: {
-    ...mapState(['page', 'shops'])
+    ...mapState(['page', 'shops', 'cartQty'])
   }
 }
 </script>
@@ -95,7 +88,9 @@ a {
   /* word-wrap: break-word; */
 }
 
-.earth-nav__shops div {
-  /* margin: 4rem auto; */
+.notif-pane {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 </style>

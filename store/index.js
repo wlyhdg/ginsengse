@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      cart: {},
+      cartQty: 0,
       page: 'index',
       userIndex: 0,
       shops: [
@@ -102,6 +104,12 @@ const createStore = () => {
     mutations: {
       updatePage(state, pageName) {
         state.page = pageName
+      },
+      addToCart(state) {
+        state.cartQty++
+      },
+      removeFromCart(state) {
+        state.cartQty--
       }
     },
     getters: {
