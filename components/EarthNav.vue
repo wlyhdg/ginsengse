@@ -8,12 +8,16 @@
     />
     <nav>
       <div class="earth-nav__linkwrap">
-        <nuxt-link to="/"
-          ><div :class="{ active: page == 'index' }">Home</div></nuxt-link
-        >
-        <div v-for="(shop, idx) in shops" :key="idx">
+        <div class="nl">
+          <div :class="[{ active: page == 'index' }, 'nl_underline']"></div>
+          <nuxt-link to="/">
+            <div>Home</div>
+          </nuxt-link>
+        </div>
+        <div v-for="(shop, idx) in shops" :key="idx" class="nl">
+          <div :class="[{ active: page == shop.tag }, 'nl_underline']"></div>
           <nuxt-link :to="'/' + shop.tag">
-            <div :class="{ active: page == shop.tag }">
+            <div>
               {{ shop.name }}
             </div></nuxt-link
           >
@@ -71,11 +75,16 @@ nav {
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.23em;
+  position: relative;
   color: #ffeca7;
 }
 
 .earth-nav__linkwrap .active {
-  border-bottom: 1px solid #f0d77c;
+  /* border-bottom: 1px solid #f0d77c; */
+  opacity: 1;
+  animation: slide 1s;
+  transition: all 1s;
+  transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
 a {
@@ -92,5 +101,26 @@ a {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.nl {
+  position: relative;
+}
+
+.nl_underline {
+  position: absolute;
+  background-color: #f0d77c;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 1px;
+  opacity: 0;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
 }
 </style>
