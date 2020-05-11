@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      drawerOpen: false,
       cart: {},
       cartQty: 0,
       page: 'index',
@@ -110,6 +111,12 @@ const createStore = () => {
       },
       removeFromCart(state) {
         state.cartQty--
+      },
+      openDrawer(state) {
+        state.drawerOpen = true
+      },
+      toggleDrawer(state, b) {
+        state.drawerOpen = b
       }
     },
     getters: {

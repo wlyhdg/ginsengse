@@ -5,6 +5,7 @@
       bg-color="#243F27"
       text-color="#E1BD3C"
       :notification-count="cartQty"
+      :on-click="openDrawer"
     />
     <nav>
       <div class="earth-nav__linkwrap">
@@ -34,6 +35,11 @@ export default {
   components: { NotificationPane },
   computed: {
     ...mapState(['page', 'shops', 'cartQty'])
+  },
+  methods: {
+    openDrawer() {
+      this.$store.commit('openDrawer')
+    }
   }
 }
 </script>
@@ -101,6 +107,7 @@ a {
   position: absolute;
   top: 0;
   right: 0;
+  cursor: pointer;
 }
 
 .nl {

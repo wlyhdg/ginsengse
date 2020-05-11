@@ -1,6 +1,6 @@
 <template>
   <div class="earth">
-    <slide-drawer />
+    <slide-drawer :activate="drawerOpen" @drawerActive="drawerClose" />
     <div class="earth__inner">
       <earth-nav />
       <div class="earth__inner-nuxt">
@@ -12,11 +12,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import EarthNav from '../components/EarthNav.vue'
 import Test from '../components/Test.vue'
 import SlideDrawer from '../components/SlideDrawer.vue'
 export default {
-  components: { EarthNav, Test, SlideDrawer }
+  components: { EarthNav, Test, SlideDrawer },
+  computed: {
+    ...mapState(['drawerOpen'])
+  },
+  methods: {
+    drawerClose(pl) {
+      this.$store.commit('toggleDrawer', pl)
+    }
+  }
 }
 </script>
 <style>

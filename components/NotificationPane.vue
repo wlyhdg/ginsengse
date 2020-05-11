@@ -8,6 +8,7 @@
         'notification'
       ]"
       :style="style"
+      @click="onClick"
     >
       <p>{{ notificationCount }}</p>
     </div>
@@ -28,6 +29,10 @@ export default {
     textColor: {
       type: String,
       default: 'black'
+    },
+    onClick: {
+      type: Function,
+      default: () => {}
     }
   },
   computed: {
