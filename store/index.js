@@ -4,7 +4,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       drawerOpen: false,
-      cart: {},
+      cart: [],
       cartQty: 0,
       page: 'index',
       userIndex: 0,
@@ -106,10 +106,16 @@ const createStore = () => {
       updatePage(state, pageName) {
         state.page = pageName
       },
-      addToCart(state, { item, price }) {
-        state.cart[item] = price
+      addToCart(state, body) {
+        state.cart.push(body)
       },
-      removeFromCart(state) {},
+      removeFromCart(state, rmvSelection) {
+        state.cart.forEach(({ item, price }, idx) => {
+          if (item === rmvSelection) {
+            state.cart.splice(idx, 1)
+          }
+        })
+      },
       openDrawer(state) {
         state.drawerOpen = true
       },
@@ -125,6 +131,9 @@ const createStore = () => {
           }
         }
         return 0
+      },
+      cartQty: (state) => {
+        return state.cart.length
       }
     }
   })

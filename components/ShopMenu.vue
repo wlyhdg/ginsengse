@@ -29,8 +29,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(['shops', 'page', 'cartQty']),
-    ...mapGetters(['selectIndex'])
+    ...mapState(['shops', 'page', 'cart']),
+    ...mapGetters(['selectIndex', 'cartQty'])
   },
   created() {
     for (let i = 0; i < this.shops[this.selectIndex].menu.length; i++) {
@@ -42,7 +42,7 @@ export default {
       if (!this.menuItemAdded[index]) {
         this.addTeaItem(index, i, p)
       } else {
-        this.removeTeaItem(index)
+        this.removeTeaItem(index, i)
       }
       this.menuItemAdded[index] = !this.menuItemAdded[index]
     },
@@ -81,7 +81,7 @@ export default {
       )
       this.$store.commit('addToCart', { item: i, price: p })
     },
-    removeTeaItem(index) {
+    removeTeaItem(index, i) {
       const tl = new TimelineMax()
       tl.to('.adder-' + index, 0.1, { x: '-=20', yoyo: true, repeat: 5 }, '<')
       tl.to(
@@ -114,7 +114,7 @@ export default {
         { stroke: '#83744E', ease: Expo.easeInOut },
         '<'
       )
-      this.$store.commit('removeFromCart')
+      this.$store.commit('removeFromCart', i)
     }
   }
 }

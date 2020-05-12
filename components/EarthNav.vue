@@ -29,12 +29,13 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import NotificationPane from './NotificationPane.vue'
 export default {
   components: { NotificationPane },
   computed: {
-    ...mapState(['page', 'shops', 'cartQty'])
+    ...mapState(['page', 'shops']),
+    ...mapGetters(['cartQty'])
   },
   methods: {
     openDrawer() {
