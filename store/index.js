@@ -106,12 +106,10 @@ const createStore = () => {
       updatePage(state, pageName) {
         state.page = pageName
       },
-      addToCart(state) {
-        state.cartQty++
+      addToCart(state, { item, price }) {
+        state.cart[item] = price
       },
-      removeFromCart(state) {
-        state.cartQty--
-      },
+      removeFromCart(state) {},
       openDrawer(state) {
         state.drawerOpen = true
       },

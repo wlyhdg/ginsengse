@@ -9,7 +9,7 @@
           <span>{{ item }}</span>
           <span>¥{{ price }}</span>
         </div>
-        <div @click="toggleMenuItem(index)">
+        <div @click="toggleMenuItem(index, item, price)">
           <button-base :class="'adder-' + index" />
         </div>
       </li>
@@ -38,15 +38,15 @@ export default {
     }
   },
   methods: {
-    toggleMenuItem(index) {
+    toggleMenuItem(index, i, p) {
       if (!this.menuItemAdded[index]) {
-        this.addTeaItem(index)
+        this.addTeaItem(index, i, p)
       } else {
         this.removeTeaItem(index)
       }
       this.menuItemAdded[index] = !this.menuItemAdded[index]
     },
-    addTeaItem(index) {
+    addTeaItem(index, i, p) {
       const tl = new TimelineMax()
       tl.to('.adder-' + index, 0.1, { x: '+=20', yoyo: true, repeat: 5 }, '<')
       tl.to(
@@ -79,7 +79,7 @@ export default {
         { stroke: '#333', ease: Expo.easeInOut },
         '<'
       )
-      this.$store.commit('addToCart')
+      this.$store.commit('addToCart', { item: i, price: p })
     },
     removeTeaItem(index) {
       const tl = new TimelineMax()
