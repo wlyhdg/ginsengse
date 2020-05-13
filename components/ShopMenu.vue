@@ -20,6 +20,7 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import { TimelineMax, Expo } from 'gsap'
+import _ from 'lodash'
 import ButtonBase from './ButtonBase.vue'
 export default {
   components: { ButtonBase },
@@ -37,7 +38,21 @@ export default {
       this.menuItemAdded[i] = false
     }
   },
+  mounted() {
+    this.isCarted()
+  },
   methods: {
+    isCarted() {
+      /* eslint-disable */
+      this.cart.forEach((cartBody) => {
+        this.shops[this.selectIndex].menu.forEach((teaBody, teaIndex) => {
+          if(_.isEqual(cartBody, teaBody)) {
+            this.menuItemAdded[teaIndex] = true;
+            this.redShake(teaIndex)
+          }
+        })
+      })
+    },
     toggleMenuItem(index, i, p) {
       if (!this.menuItemAdded[index]) {
         this.addTeaItem(index, i, p)
@@ -46,7 +61,7 @@ export default {
       }
       this.menuItemAdded[index] = !this.menuItemAdded[index]
     },
-    addTeaItem(index, i, p) {
+    redShake(index) {
       const tl = new TimelineMax()
       tl.to('.adder-' + index, 0.1, { x: '+=20', yoyo: true, repeat: 5 }, '<')
       tl.to(
@@ -79,6 +94,41 @@ export default {
         { stroke: '#333', ease: Expo.easeInOut },
         '<'
       )
+    },
+    addTeaItem(index, i, p) {
+      // const tl = new TimelineMax()
+      // tl.to('.adder-' + index, 0.1, { x: '+=20', yoyo: true, repeat: 5 }, '<')
+      // tl.to(
+      //   '.adder-' + index,
+      //   0.1,
+      //   { x: '-=20', yoyo: true, repeat: 5 },
+      //   '<0.1'
+      // )
+      // tl.to(
+      //   '.adder-' + index + ' #vector3',
+      //   1,
+      //   { opacity: 0, ease: Expo.easeInOut },
+      //   '<'
+      // )
+      // tl.to(
+      //   '.adder-' + index + ' #btngrass',
+      //   1,
+      //   { opacity: 0, ease: Expo.easeInOut },
+      //   '<'
+      // )
+      // tl.to(
+      //   '.adder-' + index + ' #btnbkgnd',
+      //   1,
+      //   { opacity: 0.8, fill: '#ad2e1b', ease: Expo.easeInOut },
+      //   '<'
+      // )
+      // tl.to(
+      //   '.adder-' + index + ' #vector2',
+      //   1,
+      //   { stroke: '#333', ease: Expo.easeInOut },
+      //   '<'
+      // )
+      this.redShake(index)
       this.$store.commit('addToCart', { item: i, price: p })
     },
     removeTeaItem(index, i) {
