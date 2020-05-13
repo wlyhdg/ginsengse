@@ -1,6 +1,11 @@
 <template>
   <div class="earth">
-    <slide-drawer :activate="drawerOpen" @drawerActive="drawerClose" />
+    <slide-drawer
+      class="slide-drawer"
+      :activate="drawerOpen"
+      :body-data="cart"
+      @drawerActive="drawerClose"
+    />
     <div class="earth__inner">
       <earth-nav />
       <div class="earth__inner-nuxt">
@@ -19,7 +24,7 @@ import SlideDrawer from '../components/SlideDrawer.vue'
 export default {
   components: { EarthNav, Test, SlideDrawer },
   computed: {
-    ...mapState(['drawerOpen'])
+    ...mapState(['drawerOpen', 'cart'])
   },
   methods: {
     drawerClose(pl) {
@@ -87,6 +92,11 @@ aside.earth-nav {
 
 .center {
   text-align: center;
+}
+
+.slide-drawer {
+  letter-spacing: 0.23em;
+  line-height: 2.5rem;
 }
 
 .page-enter-active {

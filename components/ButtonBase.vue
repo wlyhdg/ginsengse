@@ -12,7 +12,7 @@
         y="1"
         :width="width"
         :height="height"
-        fill="#49412B"
+        :fill="bgColor"
       />
       <path
         id="btngrass"

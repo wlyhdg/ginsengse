@@ -5,7 +5,6 @@ const createStore = () => {
     state: {
       drawerOpen: false,
       cart: [],
-      cartQty: 0,
       page: 'index',
       userIndex: 0,
       shops: [

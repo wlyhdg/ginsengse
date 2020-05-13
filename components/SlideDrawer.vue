@@ -3,6 +3,17 @@
     <div class="close-icon" @click="close">
       <p>minimize</p>
     </div>
+    <section class="slide-body">
+      <div
+        v-for="(data, index) in bodyData"
+        :key="index"
+        class="slide-body__checkout-item"
+      >
+        <div v-for="(key, idx) of Object.keys(data)" :key="idx">
+          <span><span v-if="key === 'price'">¥</span>{{ data[key] }}</span>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -12,6 +23,10 @@ export default {
     activate: {
       type: Boolean,
       default: false
+    },
+    bodyData: {
+      type: Array,
+      default: () => []
     }
   },
   data() {
@@ -49,5 +64,21 @@ export default {
   right: 0;
   margin: 15px;
   cursor: pointer;
+}
+
+.slide-body {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-body__checkout-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 </style>
