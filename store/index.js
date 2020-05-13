@@ -46,9 +46,9 @@ const createStore = () => {
           ]
         },
         {
-          tag: 'toff',
-          name: "Toff's Tea Temple",
-          owner: 'Toff',
+          tag: 'toph',
+          name: "Toph's Tea Temple",
+          owner: 'Toph',
           likes: 6863,
           dislikes: 67,
           menu: [

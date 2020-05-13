@@ -10,7 +10,7 @@
         img-link="/iroh_by_damionmauville_dbh31n5-pre.jpg"
       />
       <photo-frame
-        v-if="page == 'toff'"
+        v-if="page == 'toph'"
         key="two"
         class="pf"
         img-link="/toph.jpg"
@@ -47,7 +47,7 @@ export default {
   &.banner-iroh {
     background-image: url('/iroh_dbgfmmu-pre.jpg');
   }
-  &.banner-toff {
+  &.banner-toph {
     background-image: url('/toph_beifong_wallpaper_by_damionmauville_dbh63rc-pre.jpg');
   }
   &.banner-kyoshi {
