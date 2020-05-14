@@ -120,6 +120,9 @@ const createStore = () => {
       },
       toggleDrawer(state, b) {
         state.drawerOpen = b
+      },
+      clearCart(state) {
+        state.cart = []
       }
     },
     getters: {

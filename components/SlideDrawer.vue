@@ -13,12 +13,22 @@
           <span><span v-if="key === 'price'">¥</span>{{ data[key] }}</span>
         </div>
       </div>
+      <div
+        v-if="checkout"
+        class="slide-body__checkout-btn"
+        @click="checkoutItems()"
+      >
+        <button-base>Checkout</button-base>
+      </div>
     </section>
   </div>
 </template>
 
 <script>
+import ButtonBase from './ButtonBase.vue'
+
 export default {
+  components: { ButtonBase },
   props: {
     activate: {
       type: Boolean,
@@ -31,12 +41,19 @@ export default {
   },
   data() {
     return {
-      show: false
+      show: false,
+      checkout: true
     }
   },
   methods: {
     close() {
       this.$emit('drawerActive', false)
+    },
+    checkoutItems() {
+      alert('Items purchased!')
+      this.$store.commit('clearCart')
+      this.$store.commit('toggleDrawer', false)
+      this.$router.push('/')
     }
   }
 }
@@ -80,5 +97,10 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.slide-body__checkout-btn {
+  margin-left: auto;
+  margin-top: 15px;
 }
 </style>

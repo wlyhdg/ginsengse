@@ -10,7 +10,7 @@
           <span>¥{{ price }}</span>
         </div>
         <div @click="toggleMenuItem(index, item, price)">
-          <button-base :class="'adder-' + index" />
+          <button-grass :class="'adder-' + index" />
         </div>
       </li>
     </ul>
@@ -21,9 +21,9 @@
 import { mapState, mapGetters } from 'vuex'
 import { TimelineMax, Expo } from 'gsap'
 import _ from 'lodash'
-import ButtonBase from './ButtonBase.vue'
+import ButtonGrass from './ButtonGrass.vue'
 export default {
-  components: { ButtonBase },
+  components: { ButtonGrass },
   data() {
     return {
       menuItemAdded: []
@@ -96,38 +96,6 @@ export default {
       )
     },
     addTeaItem(index, i, p) {
-      // const tl = new TimelineMax()
-      // tl.to('.adder-' + index, 0.1, { x: '+=20', yoyo: true, repeat: 5 }, '<')
-      // tl.to(
-      //   '.adder-' + index,
-      //   0.1,
-      //   { x: '-=20', yoyo: true, repeat: 5 },
-      //   '<0.1'
-      // )
-      // tl.to(
-      //   '.adder-' + index + ' #vector3',
-      //   1,
-      //   { opacity: 0, ease: Expo.easeInOut },
-      //   '<'
-      // )
-      // tl.to(
-      //   '.adder-' + index + ' #btngrass',
-      //   1,
-      //   { opacity: 0, ease: Expo.easeInOut },
-      //   '<'
-      // )
-      // tl.to(
-      //   '.adder-' + index + ' #btnbkgnd',
-      //   1,
-      //   { opacity: 0.8, fill: '#ad2e1b', ease: Expo.easeInOut },
-      //   '<'
-      // )
-      // tl.to(
-      //   '.adder-' + index + ' #vector2',
-      //   1,
-      //   { stroke: '#333', ease: Expo.easeInOut },
-      //   '<'
-      // )
       this.redShake(index)
       this.$store.commit('addToCart', { item: i, price: p })
     },

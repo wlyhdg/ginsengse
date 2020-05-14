@@ -37,12 +37,17 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Gruppo&display=swap');
 
 html {
+  background: #9f9f6e;
+  overflow: hidden;
+}
+
+html,
+button,
+a {
   font-family: 'Gruppo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   box-sizing: border-box;
-  background: #9f9f6e;
-  overflow: hidden;
 }
 
 *,
