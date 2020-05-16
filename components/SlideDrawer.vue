@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .drawer {
   position: absolute;
   transition: all 1s cubic-bezier(0.37, 0.99, 0.58, 0.09);
@@ -77,10 +77,40 @@ export default {
 }
 
 .close-icon {
+  transition: border 2s ease;
+  border: 1px solid transparent;
   position: absolute;
   right: 0;
   margin: 15px;
   cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    background: pink;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: 1s all ease;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    background: pink;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 1s all ease;
+  }
+  &:hover {
+    &::before,
+    &::after {
+      transform: scaleX(1);
+    }
+  }
 }
 
 .slide-body {
