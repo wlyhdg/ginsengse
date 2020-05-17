@@ -13,6 +13,7 @@
           <span><span v-if="key === 'price'">¥</span>{{ data[key] }}</span>
         </div>
       </div>
+      <div v-if="bodyData" class="price-total">¥{{ sumOne }}</div>
       <div
         v-if="checkout"
         class="slide-body__checkout-btn"
@@ -45,6 +46,15 @@ export default {
       checkout: true
     }
   },
+  computed: {
+    sumOne() {
+      let priceTotal = 0
+      if (this.bodyData) {
+        this.bodyData.forEach(({ price }) => (priceTotal += price))
+      }
+      return priceTotal
+    }
+  },
   methods: {
     close() {
       this.$emit('drawerActive', false)
@@ -54,6 +64,13 @@ export default {
       this.$store.commit('clearCart')
       this.$store.commit('toggleDrawer', false)
       this.$router.push('/')
+    },
+    calculateTotal() {
+      let sum = 0
+      if (this.bodyData) {
+        this.bodyData.forEach(({ price }) => (sum += price))
+        return sum
+      }
     }
   }
 }
@@ -129,8 +146,13 @@ export default {
   width: 100%;
 }
 
-.slide-body__checkout-btn {
+.slide-body__checkout-btn,
+.price-total {
   margin-left: auto;
   margin-top: 15px;
+}
+
+.price-total {
+  border-top: 1px gray solid;
 }
 </style>
