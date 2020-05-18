@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      isCheckedOut: false,
       drawerOpen: false,
       cart: [],
       page: 'index',
@@ -122,7 +123,11 @@ const createStore = () => {
         state.drawerOpen = b
       },
       clearCart(state) {
+        state.isCheckedOut = true
         state.cart = []
+        setTimeout(() => {
+          state.isCheckedOut = false
+        }, 2000)
       }
     },
     getters: {

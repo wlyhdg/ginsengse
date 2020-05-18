@@ -1,5 +1,6 @@
 <template>
   <div class="earth">
+    <check-card v-if="isCheckedOut" class="checkout--success" />
     <slide-drawer
       class="slide-drawer"
       :activate="drawerOpen"
@@ -21,10 +22,11 @@ import { mapState } from 'vuex'
 import EarthNav from '../components/EarthNav.vue'
 import Test from '../components/Test.vue'
 import SlideDrawer from '../components/SlideDrawer.vue'
+import CheckCard from '../components/CheckCard.vue'
 export default {
-  components: { EarthNav, Test, SlideDrawer },
+  components: { EarthNav, Test, SlideDrawer, CheckCard },
   computed: {
-    ...mapState(['drawerOpen', 'cart'])
+    ...mapState(['drawerOpen', 'cart', 'isCheckedOut'])
   },
   methods: {
     drawerClose(pl) {
@@ -102,6 +104,15 @@ aside.earth-nav {
 .slide-drawer {
   letter-spacing: 0.23em;
   line-height: 2.5rem;
+}
+
+.checkout--success {
+  position: absolute;
+  z-index: 555555;
+  left: 15px;
+  top: 15px;
+
+  /* transform: translateX(-50%); */
 }
 
 .page-enter-active {

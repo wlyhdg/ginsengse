@@ -60,7 +60,6 @@ export default {
       this.$emit('drawerActive', false)
     },
     checkoutItems() {
-      alert('Items purchased!')
       this.$store.commit('clearCart')
       this.$store.commit('toggleDrawer', false)
       this.$router.push('/')
