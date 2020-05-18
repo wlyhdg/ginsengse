@@ -109,8 +109,8 @@ aside.earth-nav {
 .checkout--success {
   position: absolute;
   z-index: 555555;
-  left: 15px;
-  top: 15px;
+  right: 20px;
+  bottom: 20px;
 
   /* transform: translateX(-50%); */
 }

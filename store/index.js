@@ -122,12 +122,12 @@ const createStore = () => {
       toggleDrawer(state, b) {
         state.drawerOpen = b
       },
-      clearCart(state) {
+      clearCart(state, timeout) {
         state.isCheckedOut = true
         state.cart = []
         setTimeout(() => {
           state.isCheckedOut = false
-        }, 2000)
+        }, timeout)
       }
     },
     getters: {
