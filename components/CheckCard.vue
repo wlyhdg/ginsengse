@@ -13,14 +13,9 @@ export default {}
 </script>
 
 <style lang="scss">
-// This is just styling for this demo
-body {
-  text-align: center;
-}
-
 // Define vars we'll be using
 $brand-success: #67743f;
-$loader-size: 5em;
+$loader-size: 3em;
 $check-height: $loader-size/2;
 $check-width: $check-height/2;
 $check-left: ($loader-size/6 + $loader-size/12);
@@ -29,6 +24,8 @@ $check-color: $brand-success;
 
 .check-container {
   color: #67743f;
+  position: absolute;
+  text-align: center;
 }
 
 .circle-loader {
@@ -38,8 +35,8 @@ $check-color: $brand-success;
   animation: loader-spin 1.2s infinite linear;
   position: relative;
   display: inline-block;
-  vertical-align: top;
-  border-radius: 50%;
+  // vertical-align: top;
+  border-radius: 10px;
   width: $loader-size;
   height: $loader-size;
 }

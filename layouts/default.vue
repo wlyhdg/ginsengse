@@ -1,6 +1,8 @@
 <template>
   <div class="earth">
-    <check-card v-if="isCheckedOut" class="checkout--success" />
+    <div style="{position: relative; margin: 50px;}">
+      <check-card v-if="isCheckedOut" class="checkout--success" />
+    </div>
     <slide-drawer
       class="slide-drawer"
       :activate="drawerOpen"
@@ -111,8 +113,6 @@ aside.earth-nav {
   z-index: 555555;
   right: 20px;
   bottom: 20px;
-
-  /* transform: translateX(-50%); */
 }
 
 .page-enter-active {
