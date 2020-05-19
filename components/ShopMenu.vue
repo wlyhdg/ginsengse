@@ -19,9 +19,10 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-import { TimelineMax, Expo } from 'gsap'
+// import { Expo } from 'gsap'
 import _ from 'lodash'
 import ButtonGrass from './ButtonGrass.vue'
+
 export default {
   components: { ButtonGrass },
   data() {
@@ -62,6 +63,12 @@ export default {
       this.menuItemAdded[index] = !this.menuItemAdded[index]
     },
     redShake(index) {
+      let TimelineMax, Expo
+      if (process.browser) {
+        let gsap = require('gsap')
+        TimelineMax = gsap.TimelineMax
+        Expo = gsap.Expo
+      }
       const tl = new TimelineMax()
       tl.to('.adder-' + index, 0.1, { x: '+=20', yoyo: true, repeat: 5 }, '<')
       tl.to(
