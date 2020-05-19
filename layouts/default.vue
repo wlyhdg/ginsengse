@@ -16,7 +16,7 @@
     <div class="earth__inner">
       <earth-nav />
       <div class="earth__inner-nuxt">
-        <test />
+        <main-page />
       </div>
     </div>
   </div>
@@ -25,11 +25,11 @@
 <script>
 import { mapState } from 'vuex'
 import EarthNav from '../components/EarthNav.vue'
-import Test from '../components/Test.vue'
+import MainPage from '../components/Main.vue'
 import SlideDrawer from '../components/SlideDrawer.vue'
 import CheckCard from '../components/CheckCard.vue'
 export default {
-  components: { EarthNav, Test, SlideDrawer, CheckCard },
+  components: { EarthNav, MainPage, SlideDrawer, CheckCard },
   computed: {
     ...mapState(['drawerOpen', 'cart', 'isCheckedOut'])
   },

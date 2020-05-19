@@ -1,15 +1,11 @@
 <template>
-  <div class="container">
-    <shop-details />
-    <shop-menu />
-  </div>
+  <shop-base />
 </template>
 
 <script>
-import ShopMenu from '../components/ShopMenu.vue'
-import ShopDetails from '../components/ShopDetails.vue'
+import ShopBase from '../components/ShopBase.vue'
 export default {
-  components: { ShopMenu, ShopDetails }
+  components: { ShopBase }
 }
 </script>
 
