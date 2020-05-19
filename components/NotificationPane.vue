@@ -48,23 +48,20 @@ export default {
 </script>
 
 <style lang="scss">
-// match primary to bg color and secondary to txt color respectively
-// $primary-color: green;
 $green: #243f27;
-// $secondary-color: black;
 $yellow: #e1bd3c;
 
-@mixin bkgClrMix($color) {
-  .bkgc-#{$color} {
-    background: calc(#{$color});
-  }
-}
+// @mixin bkgClrMix($color) {
+//   .bkgc-#{$color} {
+//     background: calc(#{$color});
+//   }
+// }
 
-@mixin txtClrMix($color) {
-  .txtc-#{$color} {
-    color: #{$color};
-  }
-}
+// @mixin txtClrMix($color) {
+//   .txtc-#{$color} {
+//     color: #{$color};
+//   }
+// }
 
 .notification {
   border: 2px solid black;
@@ -87,8 +84,8 @@ $yellow: #e1bd3c;
   opacity: 1;
 }
 
-.notif-container {
-  @include bkgClrMix($green);
-  @include txtClrMix($yellow);
-}
+// .notif-container {
+//   @include bkgClrMix($green);
+//   @include txtClrMix($yellow);
+// }
 </style>
