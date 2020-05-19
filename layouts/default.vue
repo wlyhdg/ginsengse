@@ -99,7 +99,7 @@ aside.earth-nav {
 .container {
   display: grid;
   height: 60%;
-  grid-template-columns: 6fr 7fr;
+  grid-template-columns: 55% 1fr;
 }
 
 .center {

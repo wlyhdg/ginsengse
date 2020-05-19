@@ -78,30 +78,55 @@ export default {
 }
 
 .home__text {
-  position: relative;
+  position: absolute;
   color: #ffe29a;
   z-index: 4;
-  top: 73px;
+  height: 100%;
 }
 
 .home__title {
+  position: absolute;
   font-size: 87px;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
   text-transform: uppercase;
-  letter-spacing: 0px;
   width: 90%;
-  margin: 0 auto;
 }
 
 .home__desc {
   margin: auto;
+  position: relative;
   font-size: 30px;
   width: 80%;
   margin-top: 60px;
+  top: 35%;
 }
 
 .home__desc > h3 {
   text-align: right;
   width: 80%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1040px) {
+  .home__title {
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .home__desc {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home__title {
+    font-size: 25px;
+  }
+  .home__desc {
+    font-size: 18px;
+  }
 }
 </style>

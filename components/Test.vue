@@ -2,7 +2,7 @@
   <div class="earth__inner--left">
     <!-- <transition-group name="test" tag="div"> -->
     <div key="banner" :class="'banner banner-' + page">
-      <photo-frame
+      <!-- <photo-frame
         v-if="page == 'iroh'"
         key="one"
         class="pf"
@@ -22,7 +22,7 @@
         class="pf"
         img-link="/kyoshi.jpg"
         vector-info="M119.535 1.45423L137 0.500744L154.465 1.45423L171.642 4.29889L188.248 8.98767L204.012 15.443L218.672 23.5581L231.99 33.1988L243.745 44.206L253.746 56.3979L261.83 69.5739L267.864 83.5174L271.751 98.0001L273.429 112.785L272.869 127.63L270.081 142.294L265.11 156.536L258.037 170.124L248.976 182.834L238.075 194.458L225.513 204.803L211.496 213.699L196.252 221L180.034 226.583L163.107 230.358L145.75 232.261H128.25L110.893 230.358L93.9664 226.583L77.748 221L62.5045 213.699L48.4867 204.803L35.9246 194.458L25.0241 182.834L15.9633 170.124L8.89 156.536L3.91916 142.294L1.13128 127.63L0.571456 112.785L2.24869 98.0001L6.13592 83.5175L12.1702 69.5739L20.2537 56.3979L30.2548 44.206L42.0102 33.1988L55.3275 23.5581L69.9883 15.443L85.7516 8.98767L102.358 4.29889L119.535 1.45423Z"
-      />
+      /> -->
     </div>
     <!-- </transition-group> -->
     <nuxt />
@@ -31,9 +31,9 @@
 
 <script>
 import { mapState } from 'vuex'
-import PhotoFrame from './PhotoFrame.vue'
+// import PhotoFrame from './PhotoFrame.vue'
 export default {
-  components: { PhotoFrame },
+  components: {},
   computed: {
     ...mapState(['page'])
   }
@@ -57,8 +57,10 @@ export default {
 
 .pf {
   position: absolute;
-  bottom: -90px;
-  left: calc(46.15% - 300px);
+  // bottom: -90px;
+  // left: calc(46.15% - 300px);
+  width: 100%;
+  height: 100%;
   z-index: 1;
 }
 
@@ -79,19 +81,5 @@ export default {
 
 .details__descr-0 {
   margin: 20px;
-}
-
-@media screen and (max-width: 860px) {
-  .pf {
-    transform: scale(0.5);
-    // left: -60px;
-  }
-}
-
-@media screen and (min-width: 860px) and (max-width: 1040px) {
-  .pf {
-    transform: scale(0.6);
-    // left: 0px;
-  }
 }
 </style>
