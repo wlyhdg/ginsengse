@@ -1,8 +1,12 @@
 <template>
   <div class="earth">
-    <div style="{position: relative; margin: 50px;}">
-      <check-card v-if="isCheckedOut" class="checkout--success" />
-    </div>
+    <transition-group name="fade" tag="div">
+      <check-card
+        v-if="isCheckedOut"
+        key="checkbox"
+        class="checkout--success"
+      />
+    </transition-group>
     <slide-drawer
       class="slide-drawer"
       :activate="drawerOpen"
@@ -12,7 +16,6 @@
     <div class="earth__inner">
       <earth-nav />
       <div class="earth__inner-nuxt">
-        <!-- <nuxt /> -->
         <test />
       </div>
     </div>
@@ -115,16 +118,20 @@ aside.earth-nav {
   bottom: 20px;
 }
 
-.page-enter-active {
+.page-enter-active,
+.fade-enter-active {
   transition: opacity 0.25s ease-out;
 }
 
-.page-leave-active {
+.page-leave-active,
+.fade-leave-active {
   transition: opacity 0.25s ease-in;
 }
 
 .page-enter,
-.page-leave-active {
+.fade-enter,
+.page-leave-active,
+.fade-leave-active {
   opacity: 0;
 }
 </style>

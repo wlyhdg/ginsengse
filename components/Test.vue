@@ -81,10 +81,17 @@ export default {
   margin: 20px;
 }
 
-@media screen and (max-width: 658px) {
+@media screen and (max-width: 860px) {
   .pf {
     transform: scale(0.5);
-    left: -60px;
+    // left: -60px;
+  }
+}
+
+@media screen and (min-width: 860px) and (max-width: 1040px) {
+  .pf {
+    transform: scale(0.6);
+    // left: 0px;
   }
 }
 </style>

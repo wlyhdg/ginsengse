@@ -13,17 +13,17 @@ export default {}
 </script>
 
 <style lang="scss">
-// Define vars we'll be using
-$brand-success: #67743f;
+$color-success: #54492b;
+// $color-success: #67743f;
 $loader-size: 3em;
 $check-height: $loader-size/2;
 $check-width: $check-height/2;
 $check-left: ($loader-size/6 + $loader-size/12);
 $check-thickness: 3px;
-$check-color: $brand-success;
+$check-color: $color-success;
 
 .check-container {
-  color: #67743f;
+  color: $color-success;
   position: absolute;
   text-align: center;
 }
