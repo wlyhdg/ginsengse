@@ -32,7 +32,7 @@
       :key="index"
       :class="'details__descr-' + index"
     >
-      <div>
+      <div class="focus">
         <h2>Focus</h2>
         <ul>
           <li v-for="(f, index2) in focus" :key="index2">{{ f }}</li>
@@ -103,6 +103,10 @@ export default {
   font-size: 10px;
 }
 
+div[class^='details__descr'] {
+  margin: 10px;
+}
+
 .owner__space > h1 {
   position: absolute;
   bottom: 15%;
@@ -140,9 +144,12 @@ export default {
   width: 100%;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 884px) {
   .pf {
     transform: scale(0.7);
+  }
+  .focus ul {
+    padding: 0px;
   }
 }
 

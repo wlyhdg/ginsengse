@@ -20,9 +20,6 @@ export default {
     padding-left: 0px;
     margin-left: 0px;
   }
-  li::before {
-    content: '> ';
-  }
   ul,
   p,
   h3,
@@ -32,6 +29,25 @@ export default {
   }
   h2 {
     font-size: 18px;
+  }
+  .menu-btn {
+    transform: scale(0.7) !important;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 870px) {
+  ul,
+  p,
+  h3,
+  h4,
+  .sc span {
+    font-size: 13px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .menu-btn {
+    transform: scale(0.7) !important;
   }
 }
 </style>

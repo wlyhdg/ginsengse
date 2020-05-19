@@ -10,7 +10,7 @@
           <span>¥{{ price }}</span>
         </div>
         <div @click="toggleMenuItem(index, item, price)">
-          <button-grass :class="'adder-' + index" />
+          <button-grass :class="'menu-btn adder-' + index" />
         </div>
       </li>
     </ul>
@@ -44,11 +44,10 @@ export default {
   },
   methods: {
     isCarted() {
-      /* eslint-disable */
       this.cart.forEach((cartBody) => {
         this.shops[this.selectIndex].menu.forEach((teaBody, teaIndex) => {
-          if(_.isEqual(cartBody, teaBody)) {
-            this.menuItemAdded[teaIndex] = true;
+          if (_.isEqual(cartBody, teaBody)) {
+            this.menuItemAdded[teaIndex] = true
             this.redShake(teaIndex)
           }
         })
@@ -62,83 +61,88 @@ export default {
       }
       this.menuItemAdded[index] = !this.menuItemAdded[index]
     },
-    redShake(index) {
+    redShake(index, direction) {
       let TimelineMax, Expo
       if (process.browser) {
-        let gsap = require('gsap')
+        const gsap = require('gsap')
         TimelineMax = gsap.TimelineMax
         Expo = gsap.Expo
       }
+
       const tl = new TimelineMax()
-      tl.to('.adder-' + index, 0.1, { x: '+=20', yoyo: true, repeat: 5 }, '<')
-      tl.to(
-        '.adder-' + index,
-        0.1,
-        { x: '-=20', yoyo: true, repeat: 5 },
-        '<0.1'
-      )
-      tl.to(
-        '.adder-' + index + ' #vector3',
-        1,
-        { opacity: 0, ease: Expo.easeInOut },
-        '<'
-      )
-      tl.to(
-        '.adder-' + index + ' #btngrass',
-        1,
-        { opacity: 0, ease: Expo.easeInOut },
-        '<'
-      )
-      tl.to(
-        '.adder-' + index + ' #btnbkgnd',
-        1,
-        { opacity: 0.8, fill: '#ad2e1b', ease: Expo.easeInOut },
-        '<'
-      )
-      tl.to(
-        '.adder-' + index + ' #vector2',
-        1,
-        { stroke: '#333', ease: Expo.easeInOut },
-        '<'
-      )
+      if (direction === 'forward') {
+        tl.to('.adder-' + index, 0.1, { x: '+=20', yoyo: true, repeat: 5 }, '<')
+        tl.to(
+          '.adder-' + index,
+          0.1,
+          { x: '-=20', yoyo: true, repeat: 5 },
+          '<0.1'
+        )
+        tl.to(
+          '.adder-' + index + ' #vector3',
+          1,
+          { opacity: 0, ease: Expo.easeInOut },
+          '<'
+        )
+        tl.to(
+          '.adder-' + index + ' #btngrass',
+          1,
+          { opacity: 0, ease: Expo.easeInOut },
+          '<'
+        )
+        tl.to(
+          '.adder-' + index + ' #btnbkgnd',
+          1,
+          { opacity: 0.8, fill: '#ad2e1b', ease: Expo.easeInOut },
+          '<'
+        )
+        tl.to(
+          '.adder-' + index + ' #vector2',
+          1,
+          { stroke: '#333', ease: Expo.easeInOut },
+          '<'
+        )
+      }
+      if (direction === 'reverse') {
+        tl.to('.adder-' + index, 0.1, { x: '-=20', yoyo: true, repeat: 5 }, '<')
+        tl.to(
+          '.adder-' + index,
+          0.1,
+          { x: '+=20', yoyo: true, repeat: 5 },
+          '<0.1'
+        )
+        tl.to(
+          '.adder-' + index + ' #vector3',
+          1,
+          { opacity: 1, ease: Expo.easeInOut },
+          '<'
+        )
+        tl.to(
+          '.adder-' + index + ' #btngrass',
+          1,
+          { opacity: 1, ease: Expo.easeInOut },
+          '<'
+        )
+        tl.to(
+          '.adder-' + index + ' #btnbkgnd',
+          1,
+          { opacity: 1, fill: '#49412B', ease: Expo.easeInOut },
+          '<'
+        )
+        tl.to(
+          '.adder-' + index + ' #vector2',
+          1,
+          { stroke: '#83744E', ease: Expo.easeInOut },
+          '<'
+        )
+      }
     },
     addTeaItem(index, i, p) {
-      this.redShake(index)
+      this.redShake(index, 'forward')
       this.$store.commit('addToCart', { item: i, price: p })
     },
     removeTeaItem(index, i) {
-      const tl = new TimelineMax()
-      tl.to('.adder-' + index, 0.1, { x: '-=20', yoyo: true, repeat: 5 }, '<')
-      tl.to(
-        '.adder-' + index,
-        0.1,
-        { x: '+=20', yoyo: true, repeat: 5 },
-        '<0.1'
-      )
-      tl.to(
-        '.adder-' + index + ' #vector3',
-        1,
-        { opacity: 1, ease: Expo.easeInOut },
-        '<'
-      )
-      tl.to(
-        '.adder-' + index + ' #btngrass',
-        1,
-        { opacity: 1, ease: Expo.easeInOut },
-        '<'
-      )
-      tl.to(
-        '.adder-' + index + ' #btnbkgnd',
-        1,
-        { opacity: 1, fill: '#49412B', ease: Expo.easeInOut },
-        '<'
-      )
-      tl.to(
-        '.adder-' + index + ' #vector2',
-        1,
-        { stroke: '#83744E', ease: Expo.easeInOut },
-        '<'
-      )
+      this.redShake(index, 'reverse')
       this.$store.commit('removeFromCart', i)
     }
   }
