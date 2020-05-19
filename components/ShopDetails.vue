@@ -135,7 +135,7 @@ export default {
 
 .pf {
   position: absolute;
-  top: -40%;
+  top: -50%;
   left: 0;
   width: 100%;
 }
@@ -146,9 +146,9 @@ export default {
   }
 }
 
-/* @media screen and (min-width: 860px) and (max-width: 1040px) {
+@media screen and (min-width: 861px) {
   .pf {
-    transform: scale(1);
+    transform: scale(1.3);
   }
-} */
+}
 </style>
