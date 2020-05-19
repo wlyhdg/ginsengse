@@ -41,8 +41,6 @@ export default {
 }
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Gruppo&display=swap');
-
 html {
   background: #9f9f6e;
   overflow: hidden;
