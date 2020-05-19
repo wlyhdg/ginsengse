@@ -48,7 +48,7 @@ export default {
         this.shops[this.selectIndex].menu.forEach((teaBody, teaIndex) => {
           if (_.isEqual(cartBody, teaBody)) {
             this.menuItemAdded[teaIndex] = true
-            this.redShake(teaIndex)
+            this.redShake(teaIndex, 'forward')
           }
         })
       })
