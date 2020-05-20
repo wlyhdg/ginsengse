@@ -115,13 +115,13 @@ export default {
   }
 }
 
-@media screen and (max-width: 758px) {
+@media screen and (max-width: 907px) {
   .home__desc {
     font-size: 25px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .home__title {
     font-size: 25px;
   }

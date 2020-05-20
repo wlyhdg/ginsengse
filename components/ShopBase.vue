@@ -22,7 +22,6 @@ export default {
   }
   ul,
   p,
-  h3,
   h4,
   .sc span {
     font-size: 11px;
@@ -38,7 +37,6 @@ export default {
 @media screen and (min-width: 500px) and (max-width: 870px) {
   ul,
   p,
-  h3,
   h4,
   .sc span {
     font-size: 13px;
