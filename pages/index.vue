@@ -6,9 +6,9 @@
       <h1 class="home__title">GinSengSe</h1>
       <div class="home__desc">
         <h3>
-          The ancient city of Ba Sing Se is known for its inpenetrable wall. But
-          where its true hidden beauty lies is in its foliage of tea & herb
-          selections!
+          The ancient city of Ba Sing Se may be known for its impenetrable wall,
+          but true hidden beauty lies is in its foliage of tea & herb selections
+          found here!
         </h3>
       </div>
     </div>

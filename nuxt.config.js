@@ -11,7 +11,8 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content:
+          'An Earthbending tea shop for all your herbal needs here in Ba Sing Se!'
       }
     ],
     link: [
