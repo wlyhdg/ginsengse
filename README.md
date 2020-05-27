@@ -1,6 +1,6 @@
-# ginsengse
+# GinSengSe
 
-> My top-notch Nuxt.js project
+> My top-notch Nuxt.js tea shop. It is Avatar: The Last Airbender themed w/ emphasis on the greatest Earth Nation
 
 ## Build Setup
 
